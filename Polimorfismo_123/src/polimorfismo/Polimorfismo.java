@@ -24,8 +24,29 @@ public class Polimorfismo {
         System.out.println("Empleados por separado;");
         System.out.printf("$s\n%s: $%,.2f\n\n", empleadoAsalariado, "Ingersos ", empleadoAsalariado.ingresos());
         System.out.printf("$s\n%s: $%,.2f\n\n", empleadoBaseMasComision, "Ingresos", empleadoBaseMasComision.ingresos());
-        System.out.printf("$s\n%s: $%,.2f\n\n", empleadoBaseMasComision, "Ingresos", empleadoBaseMasComision.ingresos());
+        System.out.printf("$s\n%s: $%,.2f\n\n", empleadoPorComision, "Ingresos", empleadoPorComision.ingresos());
+                System.out.printf("$s\n%s: $%,.2f\n\n", empleadoPorHoras, "Ingresos", empleadoPorHoras.ingresos());
+
         Empleado[] empleado = new Empleado[4];
         empleado[0] = empleadoAsalariado;
+        empleado[1] = empleadoBaseMasComision;
+        empleado[2] = empleadoPorComision;
+        empleado[3] = empleadoPorHoras;
+        
+        for(Empleado empleadoActual:empleado){
+            System.out.println(empleado);
+            if (empleadoActual instanceof EmpleadoBaseMasComision){
+            EmpleadoBaseMasComision empleados=(EmpleadoBaseMasComision) empleadoActual;
+            empleados.establecerSalarioBase(1.10*empleados.obtenerSalarioBase());
+                System.out.printf("El nuevo salario base es con el 10% de incremento: $%,.2f\n\n",empleadoBaseMasComision());
+                
+                
+            
+        }
+            System.out.printf("El empleado actual: $%,.2f\n\n",empleadoActual.ingresos());
+            for(int j=0;j<empleado.length;j++){
+                System.out.println("El empleado es un  %$\n",j,empleado(j).getClass().getName());
+            }
+        }
     }
 }
