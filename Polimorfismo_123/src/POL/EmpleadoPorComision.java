@@ -12,7 +12,7 @@ public class EmpleadoPorComision extends Empleado {
     //protected double tarifaComision;
 
     public EmpleadoPorComision(String nombre, String apellido, String nss, double ventas, double tarifa) {
-        super(nombre,apellido,nss);
+         super(nombre,apellido,nss);
         establecerVentasBrutas(ventas);
         establecerTarifaComision(tarifa);
     }
@@ -46,6 +46,5 @@ public double ingresos() {
     public String toString() {
         return String.format("%s: %s\n%s: $%,.2f; %s: %.2f","empleado por comision",super.toString(),"Ventas brutas", obtenerVentasBrutas(), "tarifa de comision", obtenerTarifaComision());
     }
-
    
 }

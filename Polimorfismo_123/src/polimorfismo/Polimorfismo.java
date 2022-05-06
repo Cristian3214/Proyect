@@ -18,35 +18,41 @@ public class Polimorfismo {
      */
     public static void main(String[] args) {
         EmpleadoAsalariado empleadoAsalariado = new EmpleadoAsalariado("Daira", "Rodrigues", "111", 800.00);
-        EmpleadoBaseMasComision empleadoBaseMasComision = new EmpleadoBaseMasComision("Jorge", "Rodrigues", "511", 800.00, .95, 400);
-        EmpleadoPorComision empleadoPorComision = new EmpleadoPorComision("Pepe", "Octaz", "231", 800, 600.00);
+        EmpleadoBaseMasComision empleadoBaseMasComision = new EmpleadoBaseMasComision("Jorge", "Rodrigues", "511", 5000,.04,300);
+        EmpleadoPorComision empleadoPorComision = new EmpleadoPorComision("Pepe", "Octaz", "231",1000,.06);
         EmpleadoPorHoras empleadoPorHoras = new EmpleadoPorHoras("Daiel", "Jaquez", "1234", 16.75, 40);
-        System.out.println("Empleados por separado;");
-        System.out.printf("$s\n%s: $%,.2f\n\n", empleadoAsalariado, "Ingersos ", empleadoAsalariado.ingresos());
-        System.out.printf("$s\n%s: $%,.2f\n\n", empleadoBaseMasComision, "Ingresos", empleadoBaseMasComision.ingresos());
-        System.out.printf("$s\n%s: $%,.2f\n\n", empleadoPorComision, "Ingresos", empleadoPorComision.ingresos());
-                System.out.printf("$s\n%s: $%,.2f\n\n", empleadoPorHoras, "Ingresos", empleadoPorHoras.ingresos());
+       System.out.printf("%s\n%s: $%,.2f\n\n",empleadoAsalariado,"Ingresos",empleadoAsalariado.ingresos());
+        System.out.printf("%s\n%s: $%,.2f\n\n",empleadoBaseMasComision,"Ingresos",empleadoBaseMasComision.ingresos());
+        System.out.printf("%s\n%s: $%,.2f\n\n",empleadoPorComision,"Ingresos",empleadoPorComision.ingresos());
+        System.out.printf("%s\n%s: $%,.2f\n\n",empleadoPorHoras,"Ingresos",empleadoPorHoras.ingresos());
 
-        Empleado[] empleado = new Empleado[4];
-        empleado[0] = empleadoAsalariado;
-        empleado[1] = empleadoBaseMasComision;
-        empleado[2] = empleadoPorComision;
-        empleado[3] = empleadoPorHoras;
+        Empleado[] empleados = new Empleado[4];
+        empleados[0] = empleadoAsalariado;
+        empleados[1] = empleadoBaseMasComision;
+        empleados[2] = empleadoPorComision;
+        empleados[3] = empleadoPorHoras;
         
-        for(Empleado empleadoActual:empleado){
-            System.out.println(empleado);
-            if (empleadoActual instanceof EmpleadoBaseMasComision){
-            EmpleadoBaseMasComision empleados=(EmpleadoBaseMasComision) empleadoActual;
-            empleados.establecerSalarioBase(1.10*empleados.obtenerSalarioBase());
-                System.out.printf("El nuevo salario base es con el 10% de incremento: $%,.2f\n\n",empleadoBaseMasComision());
-                
+        for(Empleado empleadoActual:empleados){
+            System.out.println(empleadoActual);
+            if(empleadoActual instanceof EmpleadoBaseMasComision){
+                EmpleadoBaseMasComision  empleado = (EmpleadoBaseMasComision)empleadoActual;
+                empleado.establecerSalarioBase(1.10*empleado.obtenerSalarioBase());
+                System.out.printf("El nuevo salario Base con 10%% de incremento es: $%,.2f\n",empleado.obtenerSalarioBase());
+            }
+                       System.out.printf("El empleado actual: $%,.2f\n\n",empleadoActual.ingresos());
+
                 
             
         }
-            System.out.printf("El empleado actual: $%,.2f\n\n",empleadoActual.ingresos());
-            for(int j=0;j<empleado.length;j++){
-                System.out.println("El empleado es un  %$\n",j,empleado(j).getClass().getName());
+            for(int j=0;j<empleados.length;j++){
+            System.out.printf("El empleado %d es un  %s\n",j,empleados[j].getClass().getName());
             }
         }
-    }
-}
+        /*
+        //Por pagar
+        System.out.println("$n%.,2fn2++");
+                */
+    }//main class
+
+
+        
