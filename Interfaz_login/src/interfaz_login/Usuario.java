@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 //
 /**
  *
@@ -253,6 +254,16 @@ public class Usuario extends javax.swing.JFrame {
 
     private void BotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonActionPerformed
         // TODO add your handling code here:
+        String Usuario="Pamelo";
+        String Contraseña="Computacion";
+        String Pass=new String(ColocarContra.getPassword());
+        if(ColocarUser.getText().equals(Usuario)&&Pass.equals(Contraseña)){
+            Menu Men1=new Menu();
+            new Menu().setVisible(true);
+            dispose();
+            
+        }else 
+            JOptionPane.showMessageDialog(null, "Contraseña incorrecta.");
     }//GEN-LAST:event_BotonActionPerformed
 
     private void ColocarContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColocarContraActionPerformed
